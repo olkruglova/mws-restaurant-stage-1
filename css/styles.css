@@ -150,9 +150,8 @@ nav h1 a {
 #restaurants-list .restaurant-img {
   background-color: #ccc;
   display: block;
-  margin: 0;
+  margin-top: 5px;
   max-width: 100%;
-  min-height: 200px;
   min-width: 100%;
 }
 #restaurants-list li h1 {
@@ -295,17 +294,18 @@ nav h1 a {
   #info-container {
     order: 1;
     width: 50%;
+    height: 1200px;
+    overflow: scroll;
   }
   #map-container {
     order: 2;
     width: 50%;
-    height: 100vw;
+    height: 1200px;
   }
   #map {
-    height: 100vw;
+    height: 1200px;
   }
-  #restaurants-list {
-    height: 100vw;
-    overflow: scroll;
+  .filter-options {
+    position: sticky;
   }
 }
