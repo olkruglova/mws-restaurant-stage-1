@@ -109,6 +109,7 @@ nav h1 a {
   width: 100%;
   background-color: #ccc;
 }
+
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
   width: 100%;
@@ -190,7 +191,10 @@ nav h1 a {
   width: 100%;
 }
 
-
+.skip-link {
+  position: absolute;
+  top: -50px;
+}
 /* ====================== Restaurant Details ====================== */
 
 .inside nav h1 a{

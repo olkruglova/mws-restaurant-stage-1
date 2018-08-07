@@ -3,13 +3,15 @@ let restaurants,
   cuisines
 var map
 var markers = []
-
+const select = document.getElementById('neighborhoods-select');
+const mapContainer = document.getElementById('map');
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
 document.addEventListener('DOMContentLoaded', (event) => {
   fetchNeighborhoods();
   fetchCuisines();
+  SkipMap();
 });
 
 /**
@@ -30,7 +32,6 @@ fetchNeighborhoods = () => {
  * Set neighborhoods HTML.
  */
 fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
-  const select = document.getElementById('neighborhoods-select');
   neighborhoods.forEach(neighborhood => {
     const option = document.createElement('option');
     option.innerHTML = neighborhood;
@@ -38,6 +39,16 @@ fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
     select.append(option);
   });
 }
+
+
+function SkipMap () {
+  if (mapContainer.focus()) {
+    console.log('Map continer focused');
+    select.focus();
+  }
+}
+
+
 
 /**
  * Fetch all cuisines and set their HTML.
