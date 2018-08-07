@@ -11,15 +11,16 @@
 </head>
 
 <body>
+  <a href="#maincontent" class="skip-link">Skip to main content</a>
   <header>
     <nav>
       <h1><a href="/">Restaurant Reviews</a></h1>
     </nav>
   </header>
 
-  <main id="maincontent" role="main">
-    <section id="map-container">
-      <div id="map"></div>
+  <main id="maincontent" role="main" aria-hidden="true">
+    <section id="map-container" tabindex="-1">
+      <div id="map" tabindex="-1"></div>
     </section>
     <section id="info-container">
       <div class="filter-options">
@@ -39,7 +40,7 @@
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {
-        navigator.serviceWorker.register('js/sw.js').then(function (registration) {
+        navigator.serviceWorker.register('sw.js').then(function (registration) {
           console.log('ServiceWorker registration successful with scope: ', registration.scope);
         }, function (err) {
           console.log('ServiceWorker registration failed: ', err);
